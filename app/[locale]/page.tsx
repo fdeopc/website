@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { contactEmail, content, locales, type Locale } from "../../lib/content";
@@ -18,6 +19,8 @@ export default async function LocalePage({ params }: Props) {
   }
 
   const page = content[locale as Locale];
+  const featuredScenarios = page.scenarios.slice(0, 6);
+  const coreServices = page.services.slice(0, 3);
   const subject =
     locale === "zh"
       ? "预约 FDE OPC AI 场景诊断"
@@ -25,7 +28,11 @@ export default async function LocalePage({ params }: Props) {
   const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}`;
 
   return (
-    <main>
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <main id="main-content">
       <header className="site-header">
         <Link className="brand" href={`/${locale}`} aria-label="FDE OPC home">
           FDE OPC
@@ -33,7 +40,7 @@ export default async function LocalePage({ params }: Props) {
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#scenarios">{page.nav.scenarios}</a>
           <a href="#services">{page.nav.services}</a>
-          <a href="#audiences">{page.nav.audiences}</a>
+          <a href="#team">{page.nav.team}</a>
           <a href="#contact">{page.nav.contact}</a>
           <Link className="language-link" href={page.nav.switchHref}>
             {page.nav.switch}
@@ -42,7 +49,7 @@ export default async function LocalePage({ params }: Props) {
       </header>
 
       <section className="hero">
-        <div className="hero-copy">
+        <div className="hero-inner">
           <p className="eyebrow">{page.hero.eyebrow}</p>
           <h1>{page.hero.title}</h1>
           <p className="hero-subtitle">{page.hero.subtitle}</p>
@@ -53,19 +60,6 @@ export default async function LocalePage({ params }: Props) {
             <a className="button button-secondary" href="#scenarios">
               {page.hero.secondaryCta}
             </a>
-          </div>
-        </div>
-
-        <div className="workflow-panel" aria-label="FDE OPC workflow">
-          <div className="panel-top">
-            <span>FDE OPC</span>
-            <span>AI FDE Studio</span>
-          </div>
-          <div className="workflow-map">
-            <div>Business process</div>
-            <div>High-frequency pain point</div>
-            <div>Working AI tool</div>
-            <div>Repeatable workflow</div>
           </div>
           <div className="stats">
             <div>
@@ -84,22 +78,13 @@ export default async function LocalePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="intro-section">
-        <div className="section-kicker">01</div>
-        <div>
-          <h2>{page.intro.title}</h2>
-          <p>{page.intro.body}</p>
-        </div>
-      </section>
-
       <section className="section" id="scenarios">
         <div className="section-heading">
-          <span className="section-kicker">02</span>
           <h2>{page.scenariosTitle}</h2>
           <p>{page.scenariosSubtitle}</p>
         </div>
         <div className="scenario-grid">
-          {page.scenarios.map((scenario, index) => (
+          {featuredScenarios.map((scenario, index) => (
             <article className="scenario-card" key={scenario}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{scenario}</h3>
@@ -110,12 +95,11 @@ export default async function LocalePage({ params }: Props) {
 
       <section className="section services-section" id="services">
         <div className="section-heading">
-          <span className="section-kicker">03</span>
           <h2>{page.servicesTitle}</h2>
           <p>{page.servicesSubtitle}</p>
         </div>
         <div className="service-list">
-          {page.services.map((service, index) => (
+          {coreServices.map((service, index) => (
             <article className="service-row" key={service.title}>
               <div className="service-index">{String(index + 1).padStart(2, "0")}</div>
               <div>
@@ -127,23 +111,41 @@ export default async function LocalePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section audience-section" id="audiences">
-        <div className="section-heading compact">
-          <span className="section-kicker">04</span>
-          <h2>{page.audiencesTitle}</h2>
+      <section className="section team-section" id="team">
+        <div className="section-heading">
+          <h2>{page.teamTitle}</h2>
+          <p>{page.teamSubtitle}</p>
         </div>
-        <div className="audience-grid">
-          {page.audiences.map((audience) => (
-            <div className="audience-item" key={audience}>
-              {audience}
-            </div>
+        <div className="team-visual">
+          <Image
+            src="/images/team-workflow.png"
+            alt={page.teamImageAlt}
+            width={1792}
+            height={1024}
+            sizes="(max-width: 1080px) 100vw, 1080px"
+          />
+        </div>
+        <div className="team-grid">
+          {page.team.map((member) => (
+            <article className="team-card" key={member.name}>
+              <span className="team-specialty">{member.specialty}</span>
+              <div className="team-card-header">
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
+              <p className="team-summary">{member.summary}</p>
+              <ul>
+                {member.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="contact-section" id="contact">
         <div>
-          <span className="section-kicker">05</span>
           <h2>{page.contact.title}</h2>
           <p>{page.contact.body}</p>
         </div>
@@ -156,6 +158,7 @@ export default async function LocalePage({ params }: Props) {
         <span>FDE OPC</span>
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

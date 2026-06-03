@@ -14,7 +14,8 @@ export const content = {
     },
     nav: {
       scenarios: "场景",
-      services: "合作方式",
+      services: "流程",
+      team: "团队",
       audiences: "目标用户",
       contact: "联系",
       switch: "EN",
@@ -57,7 +58,7 @@ export const content = {
       "小型业务系统 / 内部工具快速开发",
     ],
     servicesTitle: "合作方式",
-    servicesSubtitle: "先诊断，再用 Demo 验证，最后把有效流程接入日常业务。",
+    servicesSubtitle: "不做大而全的转型方案，只从一个真实流程开始。",
     services: [
       {
         title: "AI 场景诊断",
@@ -80,6 +81,36 @@ export const content = {
           "以远程或阶段性驻场方式，持续参与企业 AI 应用建设、工具选型、流程改造和内部团队培训。",
       },
     ],
+    teamTitle: "专家团队",
+    teamSubtitle:
+      "你将直接与真正做过生产系统、企业交付和 AI 工具创业的实践者一起工作。",
+    teamImageAlt: "两位 AI FDE 实践者协作搭建数据、Agent 和自动化工作流的抽象插画",
+    team: [
+      {
+        specialty: "Production AI Systems",
+        name: "0xShadowfly",
+        role: "数据工程师 · AI 系统落地专家",
+        summary:
+          "自 2018 年起从事人工智能在生产环境中的部署与应用，长期参与农业、政务和企业 AI 系统建设。",
+        points: [
+          "参与苏州、上海浦东人工智能农业实验室建设，构建数据中台与气雾栽培控制系统。",
+          "参与通辽智慧牧草种植工厂种植系统搭建，并申请多项人工智能相关专利。",
+          "服务超过 50 家中小企业和一人企业，交付 AI 客服、数字人、营销系统和私有模型训练部署。",
+        ],
+      },
+      {
+        specialty: "AI FDE & Product Prototyping",
+        name: "Tao",
+        role: "连续创业者 · 独立开发者 · AI FDE 实践者",
+        summary:
+          "长期参与互联网产品、跨境电商、Web3 与 AI 工具创业实践，擅长把真实业务需求转化为产品原型和自动化流程。",
+        points: [
+          "专注企业端 AI 应用落地，连接大模型、AI Agent 与中小企业高频业务场景。",
+          "深度使用多 Agent 工作流完成信息整理、项目管理、内容生产、数据分析和代码开发。",
+          "持续探索一人公司、远程协作和 AI 驱动的新型生产方式，推动 FDE OPC 的方法沉淀。",
+        ],
+      },
+    ],
     audiencesTitle: "目标用户",
     audiences: [
       "全球中小企业主",
@@ -94,7 +125,7 @@ export const content = {
     contact: {
       title: "带着一个真实流程，开始一次 AI 场景诊断",
       body:
-        "告诉我们你的行业、团队规模和一个反复消耗时间的业务环节，我们会一起判断它是否适合用 AI 工具、Agent 或自动化流程解决。",
+        "告诉我们一个反复消耗时间的业务环节，我们会一起判断它是否适合用 AI 工具、Agent 或自动化流程解决。",
       cta: "发送邮件预约",
     },
   },
@@ -107,7 +138,8 @@ export const content = {
     },
     nav: {
       scenarios: "Scenarios",
-      services: "Engagements",
+      services: "Process",
+      team: "Team",
       audiences: "Who We Help",
       contact: "Contact",
       switch: "中文",
@@ -149,9 +181,9 @@ export const content = {
       "SOP, hiring, and training workflow automation",
       "Small business systems and internal tools",
     ],
-    servicesTitle: "Engagement Models",
+    servicesTitle: "How we work",
     servicesSubtitle:
-      "Start with diagnosis, validate with a working demo, then connect proven workflows to daily operations.",
+      "No broad transformation deck. Start with one real workflow.",
     services: [
       {
         title: "AI Scenario Diagnosis",
@@ -174,6 +206,36 @@ export const content = {
           "Through remote collaboration or staged on-site work, we support AI application delivery, tool selection, process redesign, and internal team training.",
       },
     ],
+    teamTitle: "Expert Team",
+    teamSubtitle:
+      "You work directly with practitioners who have shipped production systems, SMB AI delivery, and AI-native product workflows.",
+    teamImageAlt: "Abstract illustration of two AI FDE practitioners building data, agent, and automation workflows",
+    team: [
+      {
+        specialty: "Production AI Systems",
+        name: "0xShadowfly",
+        role: "Data Engineer · AI Systems Delivery Expert",
+        summary:
+          "Since 2018, 0xShadowfly has deployed and applied AI in production environments across agriculture, government, and SMB systems.",
+        points: [
+          "Helped build AI agriculture labs in Suzhou and Shanghai Pudong, including data platforms and aeroponic cultivation control systems.",
+          "Contributed to the Tongliao smart forage planting factory system and filed multiple AI-related patents.",
+          "Supported 50+ SMBs and solo companies with AI support systems, digital humans, marketing systems, and private model training and deployment.",
+        ],
+      },
+      {
+        specialty: "AI FDE & Product Prototyping",
+        name: "Tao",
+        role: "Serial Founder · Indie Developer · AI FDE Practitioner",
+        summary:
+          "Tao works across internet products, cross-border ecommerce, Web3, and AI tooling, turning real business needs into prototypes and automation workflows.",
+        points: [
+          "Focuses on enterprise AI adoption by connecting LLMs and AI agents to concrete SMB workflows.",
+          "Uses multi-agent workflows for research, project management, content production, data analysis, and software development.",
+          "Explores solo-company systems, remote collaboration, and AI-driven production methods through FDE OPC.",
+        ],
+      },
+    ],
     audiencesTitle: "Who We Help",
     audiences: [
       "Global SMB owners",
@@ -188,7 +250,7 @@ export const content = {
     contact: {
       title: "Bring one real workflow to an AI scenario diagnosis",
       body:
-        "Tell us your industry, team size, and one workflow that repeatedly consumes time. We will assess whether it can be improved with AI tools, agents, or automation.",
+        "Tell us one workflow that repeatedly consumes time. We will assess whether it can be improved with AI tools, agents, or automation.",
       cta: "Email us to book",
     },
   },
@@ -198,6 +260,7 @@ export const content = {
   nav: {
     scenarios: string;
     services: string;
+    team: string;
     audiences: string;
     contact: string;
     switch: string;
@@ -223,6 +286,16 @@ export const content = {
   servicesTitle: string;
   servicesSubtitle: string;
   services: { title: string; body: string }[];
+  teamTitle: string;
+  teamSubtitle: string;
+  teamImageAlt: string;
+  team: {
+    specialty: string;
+    name: string;
+    role: string;
+    summary: string;
+    points: string[];
+  }[];
   audiencesTitle: string;
   audiences: string[];
   contact: { title: string; body: string; cta: string };

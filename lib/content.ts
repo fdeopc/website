@@ -2,15 +2,24 @@ export type Locale = "zh" | "en";
 
 export const locales: Locale[] = ["zh", "en"];
 
-export const contactEmail = "hello@fdeopc.com";
+export const contactEmail = "hello@fdeopc.xyz";
 
 export const content = {
   zh: {
     lang: "zh-CN",
     meta: {
-      title: "FDE OPC | 面向全球中小企业的 AI FDE 工作室",
+      title: "FDE OPC | AI 工作流与业务 Demo 工作室",
       description:
-        "FDE OPC 帮助全球中小企业把真实业务需求快速转化为可运行的 AI 工具、业务 Demo 和自动化工作流。",
+        "FDE OPC 为全球中小企业搭建可运行的 AI 工具、业务 Demo 和自动化工作流，帮助制造业、跨境电商和服务团队落地 AI 应用。",
+      keywords: [
+        "AI FDE",
+        "AI 工作流",
+        "AI Agent",
+        "中小企业 AI 转型",
+        "业务 Demo",
+        "自动化工作流",
+        "企业 AI 应用",
+      ],
     },
     nav: {
       scenarios: "场景",
@@ -132,9 +141,18 @@ export const content = {
   en: {
     lang: "en",
     meta: {
-      title: "FDE OPC | AI FDE Studio for Global SMBs",
+      title: "FDE OPC | AI Workflow Studio for Global SMBs",
       description:
-        "FDE OPC helps global SMBs turn real business needs into working AI tools, business demos, and automation workflows.",
+        "FDE OPC builds working AI tools, business demos, and automation workflows for global SMBs across manufacturing, ecommerce, services, and software teams.",
+      keywords: [
+        "AI FDE",
+        "AI workflow studio",
+        "AI agents for SMBs",
+        "business demo development",
+        "workflow automation",
+        "enterprise AI implementation",
+        "SMB AI transformation",
+      ],
     },
     nav: {
       scenarios: "Scenarios",
@@ -256,7 +274,7 @@ export const content = {
   },
 } satisfies Record<Locale, {
   lang: string;
-  meta: { title: string; description: string };
+  meta: { title: string; description: string; keywords: string[] };
   nav: {
     scenarios: string;
     services: string;

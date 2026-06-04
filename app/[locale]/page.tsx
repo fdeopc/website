@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { contactEmail, content, locales, type Locale } from "../../lib/content";
+import { absoluteUrl, siteConfig } from "../../lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,9 +27,84 @@ export default async function LocalePage({ params }: Props) {
       ? "预约 FDE OPC AI 场景诊断"
       : "Book an FDE OPC AI Scenario Diagnosis";
   const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}`;
+  const pageUrl = absoluteUrl(`/${locale}`);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${absoluteUrl()}#organization`,
+        name: siteConfig.name,
+        url: absoluteUrl(),
+        email: contactEmail,
+        logo: absoluteUrl("/icon.svg"),
+        description: page.meta.description,
+        sameAs: ["https://github.com/fdeopc"],
+        founder: page.team.map((member) => ({
+          "@type": "Person",
+          name: member.name,
+          jobTitle: member.role,
+          description: member.summary,
+        })),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${absoluteUrl()}#website`,
+        name: siteConfig.name,
+        url: absoluteUrl(),
+        inLanguage: page.lang,
+        publisher: {
+          "@id": `${absoluteUrl()}#organization`,
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${pageUrl}#service`,
+        name: page.meta.title,
+        url: pageUrl,
+        image: absoluteUrl(siteConfig.ogImage),
+        description: page.meta.description,
+        email: contactEmail,
+        areaServed: "Global",
+        provider: {
+          "@id": `${absoluteUrl()}#organization`,
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: page.servicesTitle,
+          itemListElement: page.services.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: service.title,
+              description: service.body,
+            },
+          })),
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: page.meta.title,
+        description: page.meta.description,
+        inLanguage: page.lang,
+        isPartOf: {
+          "@id": `${absoluteUrl()}#website`,
+        },
+        about: {
+          "@id": `${absoluteUrl()}#organization`,
+        },
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>

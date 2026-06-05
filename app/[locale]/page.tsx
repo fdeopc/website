@@ -21,6 +21,8 @@ export default async function LocalePage({ params }: Props) {
 
   const page = content[locale as Locale];
   const featuredScenarios = page.scenarios.slice(0, 6);
+  const featuredCase = page.cases[0];
+  const supportingCases = page.cases.slice(1);
   const coreServices = page.services.slice(0, 3);
   const subject =
     locale === "zh"
@@ -83,6 +85,21 @@ export default async function LocalePage({ params }: Props) {
         },
       },
       {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#case-studies`,
+        name: page.casesTitle,
+        itemListElement: page.cases.map((caseStudy, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "CreativeWork",
+            name: caseStudy.title,
+            description: caseStudy.summary,
+            about: caseStudy.tag,
+          },
+        })),
+      },
+      {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
@@ -115,6 +132,7 @@ export default async function LocalePage({ params }: Props) {
         </Link>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#scenarios">{page.nav.scenarios}</a>
+          <Link href={`/${locale}/cases`}>{page.nav.cases}</Link>
           <a href="#services">{page.nav.services}</a>
           <a href="#team">{page.nav.team}</a>
           <a href="#contact">{page.nav.contact}</a>
@@ -166,6 +184,115 @@ export default async function LocalePage({ params }: Props) {
               <h3>{scenario}</h3>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section cases-section" id="cases">
+        <div className="section-heading">
+          <h2>{page.casesTitle}</h2>
+          <p>{page.casesSubtitle}</p>
+        </div>
+        <div className="case-showcase">
+          <article className="case-feature">
+            <Link
+              className="case-image-link"
+              href={`/${locale}/cases/${featuredCase.slug}`}
+              aria-label={featuredCase.title}
+            >
+              <Image
+                src={featuredCase.image}
+                alt={featuredCase.imageAlt}
+                width={1586}
+                height={992}
+                sizes="(max-width: 820px) 100vw, 548px"
+              />
+              <span>{featuredCase.tag}</span>
+            </Link>
+            <div className="case-feature-copy">
+              <span className="case-tag">{featuredCase.tag}</span>
+              <h3>{featuredCase.title}</h3>
+              <p>{featuredCase.summary}</p>
+            </div>
+            <div className="case-comparison" aria-label={featuredCase.title}>
+              <div>
+                <span>{page.casesLabels.challenge}</span>
+                <p>{featuredCase.challenge}</p>
+              </div>
+              <div>
+                <span>{page.casesLabels.solution}</span>
+                <p>{featuredCase.solution}</p>
+              </div>
+              <div>
+                <span>{page.casesLabels.effect}</span>
+                <p>{featuredCase.effect}</p>
+              </div>
+            </div>
+            <div className="case-metrics">
+              {featuredCase.metrics.map((metric) => (
+                <span key={metric}>{metric}</span>
+              ))}
+            </div>
+            <Link className="case-text-link" href={`/${locale}/cases/${featuredCase.slug}`}>
+              {page.casesPage.viewCase}
+            </Link>
+          </article>
+          <div className="case-system" aria-label={page.casesEyebrow}>
+            <div className="case-system-header">
+              <span>{page.casesEyebrow}</span>
+              <strong>FDE OPC</strong>
+            </div>
+            <div className="case-flow">
+              {Object.values(page.casesFlow).map((step, index) => (
+                <div className="case-flow-node" key={step}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{step}</strong>
+                </div>
+              ))}
+            </div>
+            <div className="case-signal" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+            </div>
+          </div>
+        </div>
+        <div className="case-grid">
+          {supportingCases.map((caseStudy) => (
+            <article className="case-card" key={caseStudy.title}>
+              <Link
+                className="case-card-image"
+                href={`/${locale}/cases/${caseStudy.slug}`}
+                aria-label={caseStudy.title}
+              >
+                <Image
+                  src={caseStudy.image}
+                  alt={caseStudy.imageAlt}
+                  width={1586}
+                  height={992}
+                  sizes="(max-width: 820px) 100vw, 333px"
+                />
+                <span>{caseStudy.tag}</span>
+              </Link>
+              <h3>
+                <Link href={`/${locale}/cases/${caseStudy.slug}`}>
+                  {caseStudy.title}
+                </Link>
+              </h3>
+              <p>{caseStudy.summary}</p>
+              <div className="case-card-footer">
+                {caseStudy.metrics.map((metric) => (
+                  <span key={metric}>{metric}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="case-actions">
+          <Link className="button button-secondary" href={`/${locale}/cases`}>
+            {page.casesPage.viewAll}
+          </Link>
         </div>
       </section>
 

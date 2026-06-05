@@ -23,6 +23,7 @@ export const content = {
     },
     nav: {
       scenarios: "场景",
+      cases: "案例",
       services: "流程",
       team: "团队",
       audiences: "目标用户",
@@ -65,6 +66,111 @@ export const content = {
       "运营数据看板",
       "SOP、招聘和培训流程自动化",
       "小型业务系统 / 内部工具快速开发",
+    ],
+    casesTitle: "典型案例",
+    casesSubtitle:
+      "从私有化商业智能、多智能体协作到农业控制系统，把复杂业务落成可运行的 AI 产品。",
+    casesEyebrow: "Selected Work",
+    casesPage: {
+      title: "代表案例",
+      subtitle: "看看我们如何把混乱流程，重组为真正能跑的业务系统。",
+      home: "首页",
+      back: "返回案例",
+      viewAll: "查看全部案例",
+      viewCase: "查看案例",
+      moreCases: "更多案例",
+      overview: "项目概览",
+      process: "交付路径",
+      outcome: "结果",
+      contactTitle: "也想把一个流程做成可运行系统？",
+      contactBody:
+        "带着一个真实业务问题来，我们会一起判断它是否适合做成 AI 工具、业务 Demo 或自动化工作流。",
+      contactCta: "预约 AI 场景诊断",
+    },
+    casesFlow: {
+      input: "业务数据",
+      model: "AI 模型与 Agent",
+      workflow: "自动化工作流",
+      output: "可运行系统",
+    },
+    casesLabels: {
+      challenge: "挑战",
+      solution: "方案",
+      effect: "效果",
+    },
+    cases: [
+      {
+        slug: "abos-business-intelligence",
+        image: "/images/cases/abos-bi.png",
+        imageAlt: "私有化商业智能 AI 系统的抽象数据工作台",
+        tag: "Private BI",
+        title: "埃博司商业模型智能系统",
+        summary:
+          "帮助企业用文字快速创建、使用私有化商业智能 AI 模型，接入内部工具，并通过自动关注更新保持模型能力领先。",
+        challenge:
+          "企业希望获得私有化、业务友好、无需编码的 AI 模型创建体验。",
+        solution:
+          "用提示驱动方法简化模型创建流程，把业务知识、模型调用和内部工具访问整合到一个可操作系统中。",
+        effect: "5 分钟建立私有化商业智能 AI",
+        metrics: ["完全私有化", "无需编码", "自动更新"],
+        process: ["梳理企业商业模型与内部知识", "设计提示驱动的模型创建流程", "接入内部工具与自动更新机制"],
+        outcome:
+          "企业可以用自然语言创建和调用私有 AI 模型，把原本依赖技术人员的模型配置流程，压缩为业务团队可直接操作的系统。",
+      },
+      {
+        slug: "ai-companyos",
+        image: "/images/cases/companyos.png",
+        imageAlt: "多智能体协作平台的抽象工作流界面",
+        tag: "Multi-Agent OS",
+        title: "AI CompanyOS",
+        summary:
+          "一人公司启动器，让用户一键构建多智能体协作平台，帮助个人和中小企业在大模型时代完成 AI 转型。",
+        challenge:
+          "个人和小团队缺少可以直接启动的 AI 协作底座。",
+        solution:
+          "把任务拆解、角色分工、资料整理和执行流程组织成多智能体协作平台。",
+        effect: "一键启动多智能体协作平台",
+        metrics: ["一人公司", "Agent 协作", "AI 转型"],
+        process: ["抽象一人公司的高频工作流", "设计多 Agent 角色与协作规则", "沉淀可复用的任务启动器与系统模板"],
+        outcome:
+          "个人和小团队可以快速启动资料整理、项目管理、内容生产和执行协作，让 AI 成为可持续运转的公司操作系统。",
+      },
+      {
+        slug: "nexthuman-longevity",
+        image: "/images/cases/nexthuman.png",
+        imageAlt: "AI 长寿研究平台分析健康报告和论文的抽象场景",
+        tag: "Longevity AI",
+        title: "NextHuman 人类长寿研究院",
+        summary:
+          "整合前沿长寿方案和顶尖论文，通过 AI 深度分析检测报告中的身体数据，生成个性化健康生活方式建议。",
+        challenge:
+          "长寿研究、检测数据和个体执行建议之间存在理解和转化成本。",
+        solution:
+          "用 AI 汇总研究资料、解析检测报告，并把身体数据转化为个性化生活方式方案。",
+        effect: "从报告数据到个性化健康建议",
+        metrics: ["论文整合", "报告分析", "个性化方案"],
+        process: ["整合前沿长寿论文与方案", "解析检测报告中的关键身体数据", "生成个性化生活方式建议"],
+        outcome:
+          "用户可以从复杂检测数据和研究材料中获得更清晰的健康行动建议，让专业知识转化为可执行的日常方案。",
+      },
+      {
+        slug: "ai-agriculture-planting",
+        image: "/images/cases/agriculture-ai.png",
+        imageAlt: "人工智能农业种植系统监测植物生长状态的抽象场景",
+        tag: "AgriTech AI",
+        title: "人工智能农业种植系统",
+        summary:
+          "采集植物生长数据，自动评测生长状态，提供种植参数调整建议，并通过自反馈迭代持续改进。",
+        challenge:
+          "种植参数调整依赖经验，难以持续吸收实时生长数据。",
+        solution:
+          "建立数据采集、状态评测、参数推荐和反馈迭代闭环，让系统持续优化种植策略。",
+        effect: "植物生长状态自动评测与参数优化",
+        metrics: ["数据采集", "参数推荐", "自反馈迭代"],
+        process: ["采集植物生长与环境数据", "评测生长状态并识别异常", "推荐种植参数并通过反馈迭代优化"],
+        outcome:
+          "系统把经验驱动的种植调整变成数据驱动的闭环，让种植参数可以持续根据植物状态进行优化。",
+      },
     ],
     servicesTitle: "合作方式",
     servicesSubtitle: "不做大而全的转型方案，只从一个真实流程开始。",
@@ -156,6 +262,7 @@ export const content = {
     },
     nav: {
       scenarios: "Scenarios",
+      cases: "Cases",
       services: "Process",
       team: "Team",
       audiences: "Who We Help",
@@ -198,6 +305,111 @@ export const content = {
       "Operations dashboards",
       "SOP, hiring, and training workflow automation",
       "Small business systems and internal tools",
+    ],
+    casesTitle: "Case Studies",
+    casesSubtitle:
+      "From private business intelligence and multi-agent collaboration to smart agriculture control systems, complex operations become working AI products.",
+    casesEyebrow: "Selected Work",
+    casesPage: {
+      title: "Representative Cases",
+      subtitle: "See how messy workflows become business systems that actually run.",
+      home: "Home",
+      back: "Back to Cases",
+      viewAll: "View All Cases",
+      viewCase: "View Case",
+      moreCases: "More Case Studies",
+      overview: "Overview",
+      process: "Delivery Path",
+      outcome: "Outcome",
+      contactTitle: "Want to turn one workflow into a working system?",
+      contactBody:
+        "Bring one real business problem. We will assess whether it should become an AI tool, business demo, or automation workflow.",
+      contactCta: "Book an AI Scenario Diagnosis",
+    },
+    casesFlow: {
+      input: "Business Data",
+      model: "AI Models & Agents",
+      workflow: "Automation Workflow",
+      output: "Working System",
+    },
+    casesLabels: {
+      challenge: "Challenge",
+      solution: "Solution",
+      effect: "Effect",
+    },
+    cases: [
+      {
+        slug: "abos-business-intelligence",
+        image: "/images/cases/abos-bi.png",
+        imageAlt: "Abstract data workstation for a private business intelligence AI system",
+        tag: "Private BI",
+        title: "ABOS Business Model Intelligence System",
+        summary:
+          "Helps companies create and use private business intelligence AI models through plain-language prompts, connect internal tools, and stay current through automatic updates.",
+        challenge:
+          "Businesses need a private, business-friendly AI model workflow that does not require coding expertise.",
+        solution:
+          "A prompt-driven model creation flow connects business knowledge, model execution, and internal AI tool access in one usable system.",
+        effect: "Build a private business intelligence AI in 5 minutes",
+        metrics: ["Private deployment", "No-code model creation", "Automatic updates"],
+        process: ["Map business models and internal knowledge", "Design a prompt-driven model creation flow", "Connect internal tools and automatic update loops"],
+        outcome:
+          "Business teams can create and operate private AI models with natural language, turning a technical configuration workflow into a usable internal system.",
+      },
+      {
+        slug: "ai-companyos",
+        image: "/images/cases/companyos.png",
+        imageAlt: "Abstract multi-agent collaboration platform workflow interface",
+        tag: "Multi-Agent OS",
+        title: "AI CompanyOS",
+        summary:
+          "A solo-company launcher that lets users create a multi-agent collaboration platform in one step, helping individuals and SMBs complete AI transformation.",
+        challenge:
+          "Solo operators and small teams need an AI-native operating base they can start using immediately.",
+        solution:
+          "Task decomposition, agent roles, knowledge organization, and execution workflows are bundled into a multi-agent collaboration platform.",
+        effect: "Launch a multi-agent collaboration platform in one step",
+        metrics: ["Solo company", "Agent collaboration", "AI transformation"],
+        process: ["Abstract high-frequency solo-company workflows", "Design agent roles and collaboration rules", "Package reusable launchers and system templates"],
+        outcome:
+          "Individuals and small teams can start research, project management, content production, and execution workflows with AI as an operating system.",
+      },
+      {
+        slug: "nexthuman-longevity",
+        image: "/images/cases/nexthuman.png",
+        imageAlt: "Abstract AI longevity research platform analyzing health reports and papers",
+        tag: "Longevity AI",
+        title: "NextHuman Longevity Research Institute",
+        summary:
+          "Integrates frontier longevity protocols and top research papers, then uses AI to analyze health report data and create personalized lifestyle plans.",
+        challenge:
+          "Research papers, health data, and practical personal recommendations are hard to connect.",
+        solution:
+          "AI summarizes research, interprets health reports, and converts body data into individualized lifestyle guidance.",
+        effect: "From health reports to personalized longevity plans",
+        metrics: ["Research synthesis", "Report analysis", "Personalized plans"],
+        process: ["Integrate frontier longevity research and protocols", "Parse key body data from health reports", "Generate personalized lifestyle recommendations"],
+        outcome:
+          "Users receive clearer health action plans from complex reports and research materials, turning expert knowledge into practical daily guidance.",
+      },
+      {
+        slug: "ai-agriculture-planting",
+        image: "/images/cases/agriculture-ai.png",
+        imageAlt: "Abstract AI agriculture planting system monitoring plant growth status",
+        tag: "AgriTech AI",
+        title: "AI Agriculture Planting System",
+        summary:
+          "Collects plant growth data, evaluates growth status automatically, recommends optimal planting parameter adjustments, and improves through feedback loops.",
+        challenge:
+          "Planting parameter tuning depends on experience and struggles to absorb real-time growth data continuously.",
+        solution:
+          "A closed loop of data collection, growth evaluation, parameter recommendation, and feedback iteration continuously improves planting strategy.",
+        effect: "Automatic growth evaluation and parameter optimization",
+        metrics: ["Data collection", "Parameter recommendation", "Feedback loop"],
+        process: ["Collect plant growth and environmental data", "Evaluate growth status and detect anomalies", "Recommend planting parameters and improve through feedback"],
+        outcome:
+          "The system turns experience-led planting adjustments into a data-driven loop that continuously optimizes parameters based on plant status.",
+      },
     ],
     servicesTitle: "How we work",
     servicesSubtitle:
@@ -283,6 +495,7 @@ export const content = {
     contact: string;
     switch: string;
     switchHref: string;
+    cases: string;
   };
   hero: {
     eyebrow: string;
@@ -301,6 +514,49 @@ export const content = {
   scenariosTitle: string;
   scenariosSubtitle: string;
   scenarios: string[];
+  casesTitle: string;
+  casesSubtitle: string;
+  casesEyebrow: string;
+  casesPage: {
+    title: string;
+    subtitle: string;
+    home: string;
+    back: string;
+    viewAll: string;
+    viewCase: string;
+    moreCases: string;
+    overview: string;
+    process: string;
+    outcome: string;
+    contactTitle: string;
+    contactBody: string;
+    contactCta: string;
+  };
+  casesFlow: {
+    input: string;
+    model: string;
+    workflow: string;
+    output: string;
+  };
+  casesLabels: {
+    challenge: string;
+    solution: string;
+    effect: string;
+  };
+  cases: {
+    slug: string;
+    image: string;
+    imageAlt: string;
+    tag: string;
+    title: string;
+    summary: string;
+    challenge: string;
+    solution: string;
+    effect: string;
+    metrics: string[];
+    process: string[];
+    outcome: string;
+  }[];
   servicesTitle: string;
   servicesSubtitle: string;
   services: { title: string; body: string }[];
